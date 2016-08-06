@@ -1,5 +1,9 @@
 # bitcoin price es7
 
-todo: you should really `git clone` this and edit locally. it's better.
+todo: better state management
 
-and perhaps use webpack. that would be nice
+- perhaps get data in the top level then pass down as props
+- we can then separate last updated and ticker components
+- also would work better for setting the page title dynamically
+
+- not related but making the text flash on updates would be nice
