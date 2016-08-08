@@ -1,3 +1,5 @@
+// Needed in case we need to cancel a promise in componentWillUnmount()
+// Native ES6 promises have no cancellation method
 const makeCancelable = (promise) => {
   let hasCanceled_ = false;
 
