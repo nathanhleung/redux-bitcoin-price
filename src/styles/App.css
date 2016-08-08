@@ -1,0 +1,15 @@
+.app {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* IE11 needs height set for flexbox vertical centering to work */
+  height: 100vh;
+  min-height: 100vh;
+  width: 100vw;
+  font-family: 'Josefin Sans';
+}
+
+.title {
+  text-align: center;
+  font-size: 3rem;
+}

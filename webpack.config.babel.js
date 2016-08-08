@@ -1,6 +1,8 @@
 import path from 'path';
 import HtmlPlugin from 'html-webpack-plugin';
 import ExtractTextPlugin from 'extract-text-webpack-plugin';
+import precss from 'precss';
+import autoprefixer from 'autoprefixer';
 
 const fontLoaders = [
   { test: /\.(woff|woff2|eot|ttf|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
@@ -9,18 +11,13 @@ const fontLoaders = [
 
 const config = {
   entry: [
-    // snippet to activate es6-promise polyfill
-    path.join(__dirname, 'src', 'util', 'activate-promises'),
+    // babel-polyfill is loaded via CDN, see https://phabricator.babeljs.io/T7348
     'whatwg-fetch', // for Safari and IE
-    'babel-polyfill', // for async await regeneratorRuntime
     path.join(__dirname, 'src', 'entry'),
   ],
   output: {
     path: path.join(__dirname, 'build'),
     filename: 'bundle.js',
-  },
-  resolve: {
-    extensions: ['', '.js', '.jsx'],
   },
   module: {
     loaders: [
@@ -30,8 +27,9 @@ const config = {
         loaders: ['babel'],
       },
       {
-        test: /\.scss$/,
-        loader: ExtractTextPlugin.extract(['css', 'sass']),
+        test: /\.css$/,
+        // see https://github.com/postcss/postcss-loader for query param info
+        loader: ExtractTextPlugin.extract(['css?modules&importLoaders=1', 'postcss']),
       },
       {
         test: /\.jade$/, // so that our IDE automatically detects Jade highlighting
@@ -45,6 +43,9 @@ const config = {
       template: path.join(__dirname, 'src', 'index.jade'),
     }),
   ],
+  postcss() {
+    return [precss, autoprefixer];
+  }
 };
 
 export default config;
