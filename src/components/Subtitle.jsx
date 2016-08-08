@@ -8,6 +8,8 @@ const Subtitle = () => {
   return (
     <div style={subtitleStyle}>
       USD/BTC
+      <br />
+      <small>Updates once per minute</small>
     </div>
   );  
 };

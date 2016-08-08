@@ -9,8 +9,11 @@ const fontLoaders = [
 
 const config = {
   entry: [
-    'babel-polyfill', // for async await
-    path.join(__dirname, 'src', 'entry.js'),
+    // snippet to activate es6-promise polyfill
+    path.join(__dirname, 'src', 'util', 'activate-promises'),
+    'whatwg-fetch', // for Safari and IE
+    'babel-polyfill', // for async await regeneratorRuntime
+    path.join(__dirname, 'src', 'entry'),
   ],
   output: {
     path: path.join(__dirname, 'build'),

@@ -57,7 +57,7 @@ class Ticker extends React.Component {
         lastUpdated: (new Date()).getTime(),
       });
       this.setDocumentTitle();
-      const seconds = 5;
+      const seconds = 60; // update once per minute
       this.interval =
         setInterval(this.tick.bind(this), 1000 * seconds);
     })();
