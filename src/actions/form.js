@@ -1,5 +1,6 @@
 import { createAction } from 'redux-actions';
-import { EDIT_BTC, EDIT_USD } from '../constants/ActionTypes';
+import { SET_BTC, SET_USD, SET_ACTIVE } from '../constants/ActionTypes';
 
-export const editBtc = createAction(EDIT_BTC);
-export const editUsd = createAction(EDIT_USD);
+export const setBtc = createAction(SET_BTC);
+export const setUsd = createAction(SET_USD);
+export const setActive = createAction(SET_ACTIVE);

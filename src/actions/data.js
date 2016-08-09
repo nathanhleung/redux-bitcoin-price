@@ -3,6 +3,7 @@ import {
   GET_GDAX,
   GET_BITSTAMP,
   GET_KRAKEN,
+  DATA_LOADED,
 } from '../constants/ActionTypes';
 import {
   PENDING,
@@ -30,6 +31,8 @@ export const errorBitstamp =
   createAction(GET_BITSTAMP, undefined, () => ({ status: ERROR }));
 export const errorKraken =
   createAction(GET_KRAKEN, undefined, () => ({ status: ERROR }));
+  
+export const dataLoaded = createAction(DATA_LOADED);
   
 export function getGdax() {
   // thunks can return promises, so we can make this an async function!
@@ -71,8 +74,11 @@ export function getKraken() {
 
 export function getData() {
   return async function(dispatch) {
-    dispatch(getGdax());
-    dispatch(getBitstamp());
-    dispatch(getKraken());
+    await Promise.all([
+      dispatch(getGdax()),
+      dispatch(getBitstamp()),
+      dispatch(getKraken()),
+    ]);
+    dispatch(dataLoaded());
   }
 }

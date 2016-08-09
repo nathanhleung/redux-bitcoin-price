@@ -8,3 +8,7 @@
   padding: 15px;
   margin: 10px;
 }
+
+.active {
+  font-weight: bold;
+}
