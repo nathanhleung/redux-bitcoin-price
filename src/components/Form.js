@@ -12,12 +12,19 @@ const Form = ({ btc, usd, onBtcChange, onUsdChange }) => {
         value={btc}
         onChange={onBtcChange}
       />
+      <select>
+        <option>BTC</option>
+      </select>
+      {' = '}
       <input
         type="text"
         className={styles.input}
         value={usd}
         onChange={onUsdChange}
       />
+      <select>
+        <option>USD</option>
+      </select>
     </form>
   );
 };

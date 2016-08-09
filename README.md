@@ -21,9 +21,8 @@ Small React app, bundled with Webpack, written in ES7+ using `async/await` funct
 ## Todo
 
 - better state management
-- perhaps get data in the top level then pass down as props
-- we can then separate last updated and ticker components
 - also would work better for setting the page title dynamically
+  - figure out how to get this working
 - not related but making the text flash on updates would be nice
 - add stocks and other things to exchange! (AAPL etc)
 - find a source for data that updates more than once per minute

@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { getData } from '../actions/data';
+import Helmet from 'react-helmet';
 import FormContainer from '../containers/FormContainer';
 import styles from '../styles/App.css';
 
@@ -12,6 +13,9 @@ class App extends Component {
   render() {
     return (
       <div className={styles.app}>
+        <Helmet
+          title={this.props.currentVal}
+        />
         { /* wrap in a div so it will be flexbox'd as a group */ }
         <div>
           <h1 className={styles.title}>Bitcoin Converter</h1>
@@ -24,6 +28,7 @@ class App extends Component {
 
 App.propTypes = {
   data: PropTypes.array.isRequired,
+  currentVal: PropTypes.string.isRequired,
   dispatch: PropTypes.func.isRequired,
 };
 

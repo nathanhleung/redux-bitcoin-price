@@ -7,8 +7,7 @@ function average(data) {
       Number(curr.price) *
       (Number(curr.volume) / totalVolume);
   }, 0);
-  // round to two digits
-  return (Math.round(weightedAvg * 100) / 100).toFixed(2);
+  return weightedAvg
 }
 
 export default average;
