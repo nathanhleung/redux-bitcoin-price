@@ -1,14 +1,6 @@
 import { Map } from 'immutable';
-import {
-  GET_GDAX,
-  GET_BITSTAMP,
-  GET_KRAKEN,
-} from '../constants/ActionTypes';
-import {
-  PENDING,
-  ERROR,
-  SUCCESS,
-} from '../constants/AsyncStates';
+import { GET_DATA } from '../constants/ActionTypes';
+import { PENDING, ERROR, SUCCESS } from '../constants/AsyncStates';
 
 function exchange(state = Map({
   isPending: false,
@@ -42,20 +34,15 @@ function exchange(state = Map({
 
 function data(state = Map(), action) {
   switch (action.type) {
-    case GET_GDAX:
+    case GET_DATA: {
+      const exchangeName = action.meta.exchange;
       return state.merge({
-        gdax: exchange(state.get('gdax'), action),
+        [exchangeName]: exchange(state.get(exchangeName), action),
       });
-    case GET_BITSTAMP:
-      return state.merge({
-        bitstamp: exchange(state.get('bitstamp'), action),
-      });
-    case GET_KRAKEN:
-      return state.merge({
-        kraken: exchange(state.get('kraken'), action),
-      });
-    default:
+    }
+    default: {
       return state;
+    }
   }
 }
 

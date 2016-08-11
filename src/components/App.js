@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react';
-import { getData } from '../actions/data';
 import Helmet from 'react-helmet';
+import { getData } from '../actions/data';
+import { GDAX, BITSTAMP, KRAKEN } from '../constants/ExchangeNames';
 import FormContainer from '../containers/FormContainer';
 import styles from '../styles/App.css';
 
@@ -8,7 +9,9 @@ class App extends Component {
   componentDidMount() {
     // set polling here
     const { dispatch } = this.props;
-    dispatch(getData());
+    dispatch(getData(GDAX));
+    dispatch(getData(BITSTAMP));
+    dispatch(getData(KRAKEN));
   }
   render() {
     return (

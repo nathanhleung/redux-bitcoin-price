@@ -1,6 +1,15 @@
 import { Map } from 'immutable';
-import { SET_BTC, SET_USD, SET_ACTIVE } from '../constants/ActionTypes';
+import {
+  SET_BTC,
+  SET_USD,
+  SET_ACTIVE,
+  UPDATE_PRICE,
+  GET_GDAX,
+  GET_BITSTAMP,
+  GET_KRAKEN,
+} from '../constants/ActionTypes';
 import { BTC, USD } from '../constants/CurrencyCodes';
+import { SUCCESS } from '../constants/AsyncStates';
 
 function form(state = Map({
   // ES6 computed properties
@@ -8,7 +17,6 @@ function form(state = Map({
   [USD]: '1',
   active: BTC,
 }), action) {
-  console.log(action);
   switch (action.type) {
     case SET_BTC:
       return state.merge({

@@ -27,3 +27,4 @@ Small React app, bundled with Webpack, written in ES7+ using `async/await` funct
 - add stocks and other things to exchange! (AAPL etc)
 - find a source for data that updates more than once per minute
 - get it to work in IE11 (the error messages are so cryptic)
+- use redux-actions `handleAction` in reducers

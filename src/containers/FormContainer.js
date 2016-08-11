@@ -14,6 +14,7 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch, ownProps) => {
+  console.log(ownProps.data);
   return {
     onUsdChange: (e) => {
       dispatch(setUsd(e.target.value));
