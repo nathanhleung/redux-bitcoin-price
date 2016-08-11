@@ -47,6 +47,8 @@ export function getData(exchange) {
           exchange,
           data,
         }));
+        // make sure stuff isn't being overwritten!
+        break;
       }
       case BITSTAMP: {
         dispatch(requestData({ exchange }));
@@ -60,6 +62,7 @@ export function getData(exchange) {
           exchange,
           data,
         }));
+        break;
       }
       case KRAKEN: {
         dispatch(requestData({ exchange }));
@@ -76,6 +79,7 @@ export function getData(exchange) {
           exchange,
           data,
         }));
+        break;
       }
       default: {
         // either do nothing or throw error

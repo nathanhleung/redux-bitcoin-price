@@ -33,6 +33,7 @@
     "immutable": "^3.8.1",
     "jade": "^1.11.0",
     "jade-loader": "^0.8.0",
+    "moment": "^2.14.1",
     "normalize.css": "^4.2.0",
     "postcss-loader": "^0.9.1",
     "precss": "^1.4.0",

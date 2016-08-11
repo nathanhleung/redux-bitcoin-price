@@ -3,19 +3,15 @@ import {
   SET_BTC,
   SET_USD,
   SET_ACTIVE,
-  UPDATE_PRICE,
-  GET_GDAX,
-  GET_BITSTAMP,
-  GET_KRAKEN,
 } from '../constants/ActionTypes';
 import { BTC, USD } from '../constants/CurrencyCodes';
-import { SUCCESS } from '../constants/AsyncStates';
 
 function form(state = Map({
   // ES6 computed properties
   [BTC]: '1',
   [USD]: '1',
   active: BTC,
+  base: BTC,
 }), action) {
   switch (action.type) {
     case SET_BTC:

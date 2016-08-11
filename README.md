@@ -45,5 +45,11 @@ It even works in IE!
 - find a source for data that updates more than once per minute
 - get it to work in IE11 (the error messages are so cryptic)
 - use redux-actions `handleAction` in reducers
+  - also merge SETUSD and SETBTC into one action
 - check to see how average is calc'd (i have a feeling that the array is being overwritten with new fetch data)
 - add an eslint config and more tests
+- dammit it was the switch statement
+  - make sure these end with returns or breaks
+  - (returns in reducers, breaks in the action creators)
+  - also a good idea to wrap these in blocks
+- better code coverage (write tests/cover fetch() fail)
