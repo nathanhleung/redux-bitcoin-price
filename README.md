@@ -2,6 +2,19 @@
 
 Small React app, bundled with Webpack, written in ES7+ using `async/await` functions and the `XMLHttpRequest` replacement, `fetch`.
 
+## Stack
+
+- [React](https://facebook.github.io/react/) view layer
+- [Redux](http://redux.js.org/) state management
+- [Redux Thunk](https://github.com/gaearon/redux-thunk) for async action creators
+- [Redux Actions](https://github.com/acdlite/redux-actions) for creating [Flux Standard Actions](https://github.com/acdlite/flux-standard-action)
+- [Immutable.js](https://facebook.github.io/immutable-js/)
+- Github's [fetch](https://github.com/github/fetch) polyfill for older browsers
+- [Babel](https://babeljs.io/) w/ [stage-3](https://babeljs.io/docs/plugins/preset-stage-3/) preset for async/await
+- [CSS Modules](https://github.com/css-modules/css-modules) so we can import and inline CSS
+- [PostCSS](http://postcss.org/) with [Autoprefixer](https://github.com/postcss/autoprefixer) and [PreCSS](https://jonathantneal.github.io/precss/)
+- [Webpack](https://webpack.github.io/) for module bundling
+
 ## Background
 
 `fetch` returns a promise, so we can `await` the completion of a request in an `async` function. In addition, the methods on the returned response also return a promise, so we can `await` those as well.
@@ -18,6 +31,10 @@ Small React app, bundled with Webpack, written in ES7+ using `async/await` funct
 })();
 ```
 
+It even works in IE!
+
+![screenshot](https://i.imgur.com/ySOQvlA.png)
+
 ## Todo
 
 - better state management
@@ -28,3 +45,5 @@ Small React app, bundled with Webpack, written in ES7+ using `async/await` funct
 - find a source for data that updates more than once per minute
 - get it to work in IE11 (the error messages are so cryptic)
 - use redux-actions `handleAction` in reducers
+- check to see how average is calc'd (i have a feeling that the array is being overwritten with new fetch data)
+- add an eslint config and more tests
