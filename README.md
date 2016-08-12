@@ -1,5 +1,7 @@
 # ES7+ Bitcoin Price Tracker
 
+![devDeps](https://david-dm.org/nathanhleung/redux-bitcoin-price/status.svg) ![devDeps](https://david-dm.org/nathanhleung/redux-bitcoin-price/dev-status.svg)
+
 Small React app, bundled with Webpack, written in ES7+ using `async/await` functions and the `XMLHttpRequest` replacement, `fetch`.
 
 ![screenshot](https://i.imgur.com/XMz6rHj.png)
