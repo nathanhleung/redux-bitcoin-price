@@ -11,20 +11,31 @@ const mapStateToProps = (state, ownProps) => {
   const currency = ownProps.currency.toUpperCase();
   const active = (currency === activeCurr) ? true : false;
   if (active) {
+    // remove commas
+    // @todo find a utility which ignores commas
+    // or one that automatically adds commas as one types
+    const value = state.form.get(currency).replace(/,/g, '');
     return {
       active,
-      value: state.form.get(currency),
+      value,
     };
   } else {
     let rate = average(ownProps.data);
-    // If currency isn't the base (BTC in this case)
-    // then we invert the rate
-    if (baseCurr !== currency) {
+    // Only triggers if this is the inactive currency
+    // If BTC is inactive, and BTC is the base (default),
+    // we need to invert the rate before multiplying
+    // by the number of USD
+    if (baseCurr === currency) {
       rate **= -1;
+    }
+    const exchanged = state.form.get(activeCurr) * rate;
+    let value = prettyNum(exchanged);
+    if (isNaN(exchanged)) {
+      value = '';
     }
     return {
       active,
-      value: prettyNum(state.form.get(active) * rate),
+      value,
     }
   }
 };

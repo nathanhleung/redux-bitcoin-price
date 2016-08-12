@@ -1,0 +1,21 @@
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  padding: 15px 0px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.link {
+  text-decoration: none;
+  color: #aaa;
+  
+  &:hover {
+    color: #333;
+  }
+}
+
+.author {
+  font-size: 1rem;
+}

@@ -17,7 +17,9 @@ Small React app, bundled with Webpack, written in ES7+ using `async/await` funct
 
 ## Background
 
-`fetch` returns a promise, so we can `await` the completion of a request in an `async` function. In addition, the methods on the returned response also return a promise, so we can `await` those as well.
+`fetch` returns a promise, so we can `await` the completion of a request in an `async` functions! Wrapped in a thunk.
+
+![screenshot](https://i.imgur.com/XMz6rHj.png)
 
 ```js
 (async () => {
@@ -31,25 +33,11 @@ Small React app, bundled with Webpack, written in ES7+ using `async/await` funct
 })();
 ```
 
-It even works in IE!
-
-![screenshot](https://i.imgur.com/ySOQvlA.png)
-
 ## Todo
-
-- better state management
-- also would work better for setting the page title dynamically
-  - figure out how to get this working
-- not related but making the text flash on updates would be nice
-- add stocks and other things to exchange! (AAPL etc)
-- find a source for data that updates more than once per minute
-- get it to work in IE11 (the error messages are so cryptic)
-- use redux-actions `handleAction` in reducers
-  - also merge SETUSD and SETBTC into one action
-- check to see how average is calc'd (i have a feeling that the array is being overwritten with new fetch data)
-- add an eslint config and more tests
-- dammit it was the switch statement
-  - make sure these end with returns or breaks
-  - (returns in reducers, breaks in the action creators)
-  - also a good idea to wrap these in blocks
-- better code coverage (write tests/cover fetch() fail)
+- Search for '@todo' in the code
+- Making the text flash on updates would be nice
+- Add stocks and other things to exchange! (AAPL etc)
+- Use redux-actions `handleAction` in reducers
+- Add an eslint config and more tests
+- Wrap switch statements in blocks and make sure they break or return
+- Better code coverage (write tests/cover fetch() fail)

@@ -29,6 +29,8 @@
     "babel-preset-stage-3": "^6.11.0",
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
+    "font-awesome": "^4.6.3",
+    "font-awesome-webpack": "0.0.4",
     "html-webpack-plugin": "^2.22.0",
     "immutable": "^3.8.1",
     "jade": "^1.11.0",

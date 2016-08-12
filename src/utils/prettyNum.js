@@ -1,18 +1,32 @@
+function addCommas(numString) {
+  let posFromEnd = 0;
+  let commaString = '';
+  while (posFromEnd < numString.length) {
+    if (posFromEnd > 0 && posFromEnd % 3 === 0) {
+      commaString += ','
+    }
+    commaString += numString[numString.length - posFromEnd - 1];
+    posFromEnd++;
+  }
+  // We built the comma string backwards, so now we need to reverse it
+  return commaString.split('').reverse().join('');
+}
+
 // makes sure .toString() doesn't return exponential notation etc
 // also adds commas to big nums!
 function prettyNum(num, sigfigs = 4) {
-  function addCommas(numString) {
-    let posFromEnd = 0;
-    let commaString = '';
-    while (posFromEnd < numString.length) {
-      if (posFromEnd > 0 && posFromEnd % 3 === 0) {
-        commaString += ','
-      }
-      commaString += numString[numString.length - posFromEnd - 1];
-      posFromEnd++;
-    }
-    // We built the comma string backwards, so now we need to reverse it
-    return commaString.split('').reverse().join('');
+  // Return string on error to keep PropTypes happy
+  if (typeof num !== 'number') {
+    // throw new TypeError('Please pass a number to prettyNum');
+    return num.toString();
+  }
+  if (!isFinite(num)) {
+    // throw new RangeError('Please pass a finite value to prettyNum');
+    return num.toString();
+  }
+  if (isNaN(num)) {
+    // throw new RangeError('Please pass a numeric value to prettyNum');
+    return num.toString();
   }
   const absNum = Math.abs(num);
   if (absNum > 10000) {

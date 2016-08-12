@@ -4,15 +4,13 @@ import moment from 'moment';
 import { getData } from '../actions/data';
 import { GDAX, BITSTAMP, KRAKEN } from '../constants/ExchangeNames';
 import Form from '../components/Form';
+import Footer from '../components/Footer';
 import styles from '../styles/App.css';
 
 class App extends Component {
   componentDidMount() {
     const { dispatch } = this.props;
     function tick() {
-      // i don't think this is how it's supposed to be done
-      // check this
-      console.log('ticked!');
       dispatch(getData(GDAX));
       dispatch(getData(BITSTAMP));
       dispatch(getData(KRAKEN));
@@ -31,11 +29,18 @@ class App extends Component {
         />
         { /* wrap in a div so it will be flexbox'd as a group */ }
         <div>
-          <h1 className={styles.title}>Bitcoin Converter</h1>
+          <h1 className={styles.title}>Simple Redux Bitcoin Converter</h1>
+          <p className={styles.textCenter}>
+            {'Index price is derived from a weighted average of bitcoin '}
+            {'prices at 3 major exchanges'}
+          </p>
           <Form data={this.props.data} />
-          <p>Updates once every 10 seconds</p>
-          <p>Last Updated {moment(this.props.lastUpdated).format('HH:mm:ss')}</p>
+          <p className={styles.textCenter}>
+            {'Updates every 10 seconds, last updated '}
+            {moment(this.props.lastUpdated).format('HH:mm:ss')}
+          </p>
         </div>
+        <Footer />
       </div>
     );
   }

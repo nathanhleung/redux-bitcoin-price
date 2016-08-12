@@ -3,6 +3,9 @@
   font-size: 2rem;
   padding: 15px;
   margin: 10px;
+  /* perhaps we could make a dynamically sized input */
+  width: 200px;
+  text-align: center;
 }
 
 .active {

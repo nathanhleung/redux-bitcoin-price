@@ -1,7 +1,6 @@
 import { Map } from 'immutable';
 import {
-  SET_BTC,
-  SET_USD,
+  CHANGE_VALUE,
   SET_ACTIVE,
 } from '../constants/ActionTypes';
 import { BTC, USD } from '../constants/CurrencyCodes';
@@ -14,13 +13,9 @@ function form(state = Map({
   base: BTC,
 }), action) {
   switch (action.type) {
-    case SET_BTC:
+    case CHANGE_VALUE:
       return state.merge({
-        [BTC]: action.payload,
-      });
-    case SET_USD:
-      return state.merge({
-        [USD]: action.payload,
+        [action.payload.currency]: action.payload.value,
       });
     case SET_ACTIVE:
       return state.merge({
