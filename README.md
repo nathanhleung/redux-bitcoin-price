@@ -2,6 +2,8 @@
 
 Small React app, bundled with Webpack, written in ES7+ using `async/await` functions and the `XMLHttpRequest` replacement, `fetch`.
 
+![screenshot](https://i.imgur.com/XMz6rHj.png)
+
 ## Stack
 
 - [React](https://facebook.github.io/react/) view layer
@@ -18,8 +20,6 @@ Small React app, bundled with Webpack, written in ES7+ using `async/await` funct
 ## Background
 
 `fetch` returns a promise, so we can `await` the completion of a request in an `async` functions! Wrapped in a thunk.
-
-![screenshot](https://i.imgur.com/XMz6rHj.png)
 
 ```js
 (async () => {
