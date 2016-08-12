@@ -380,15 +380,44 @@ textarea {
   -webkit-appearance: button; /* 1 */
   font: inherit; /* 2 */
 }
-._1_4XVRcSzRlK77ZE2vJXeq {
-  text-align: center;
-}
-
-.ThVlzqbHRIHE7o-PKW6FV {
+._2xY_EpRZVXzMCHAMfTKPA9 {
   border: 1px solid #333;
   font-size: 2rem;
   padding: 15px;
   margin: 10px;
+  /* perhaps we could make a dynamically sized input */
+  width: 200px;
+  text-align: center;
+}
+
+.Zi4_m0c4OMQQMLt7nNn1l {
+  font-weight: bold;
+}._1_4XVRcSzRlK77ZE2vJXeq {
+  text-align: center;
+}
+
+._3ugmCtDde7izlg9trIwWJ1 {
+  font-size: 1.5rem;
+}._2yjHqn79WTO6Wnq4CtGE_f {
+  position: absolute;
+  bottom: 0;
+  width: 100vw;
+  padding: 15px 0px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+._2-yzb6QK3NJiBQctZqK4Pt {
+  text-decoration: none;
+  color: #aaa
+}
+
+._2-yzb6QK3NJiBQctZqK4Pt:hover {
+  color: #333;
+}
+
+.prTW_y0Li0DpbN4IhBGYp {
+  font-size: 1rem;
 }.RXK-nobmVSmulAxqM2pq7 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -404,9 +433,15 @@ textarea {
   min-height: 100vh;
   width: 100vw;
   font-family: 'Josefin Sans';
+  background: #eee;
+  color: #333;
 }
 
 ._32LcvZw1GjsrKSl5mG53qj {
   text-align: center;
   font-size: 3rem;
+}
+
+._10FytcZgo1VfUwihBcZ4T4 {
+  text-align: center;
 }
