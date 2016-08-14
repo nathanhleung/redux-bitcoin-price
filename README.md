@@ -1,8 +1,9 @@
 # ES7+ Bitcoin Price Tracker
 
-![devDeps](https://david-dm.org/nathanhleung/redux-bitcoin-price/status.svg) ![devDeps](https://david-dm.org/nathanhleung/redux-bitcoin-price/dev-status.svg)
+<a href="https://david-dm.org/nathanhleung/redux-bitcoin-price">![deps](https://david-dm.org/nathanhleung/redux-bitcoin-price/status.svg)</a>
+<a href="https://david-dm.org/nathanhleung/redux-bitcoin-price?type=dev">![devDeps](https://david-dm.org/nathanhleung/redux-bitcoin-price/dev-status.svg)</a>
 
-Small React app, bundled with Webpack, written in ES7+ using `async/await` functions and the `XMLHttpRequest` replacement, `fetch`.
+Bitcoin price tracker built with [React](https://facebook.github.io/react/), [Redux](http://redux.js.org/), and [Webpack](https://webpack.github.io/), inspired by [Preev](http://preev.com/). Uses [Redux Thunk](https://github.com/gaearon/redux-thunk), [ES7 async/await](https://ponyfoo.com/articles/understanding-javascript-async-await), and [fetch](https://github.com/github/fetch) to get exchange data, then calculates a weighted average and updates once every 10 seconds (updates the title tag too!).
 
 ![screenshot](https://i.imgur.com/XMz6rHj.png)
 
@@ -12,6 +13,7 @@ Small React app, bundled with Webpack, written in ES7+ using `async/await` funct
 - [Redux](http://redux.js.org/) state management
 - [Redux Thunk](https://github.com/gaearon/redux-thunk) for async action creators
 - [Redux Actions](https://github.com/acdlite/redux-actions) for creating [Flux Standard Actions](https://github.com/acdlite/flux-standard-action)
+- [React Helmet](https://github.com/nfl/react-helmet) to update the title tag
 - [Immutable.js](https://facebook.github.io/immutable-js/)
 - Github's [fetch](https://github.com/github/fetch) polyfill for older browsers
 - [Babel](https://babeljs.io/) w/ [stage-3](https://babeljs.io/docs/plugins/preset-stage-3/) preset for async/await
@@ -19,9 +21,9 @@ Small React app, bundled with Webpack, written in ES7+ using `async/await` funct
 - [PostCSS](http://postcss.org/) with [Autoprefixer](https://github.com/postcss/autoprefixer) and [PreCSS](https://jonathantneal.github.io/precss/)
 - [Webpack](https://webpack.github.io/) for module bundling
 
-## Background
+## Why Fetch and async/await?
 
-`fetch` returns a promise, so we can `await` the completion of a request in an `async` functions! Wrapped in a thunk.
+`fetch` returns a promise, so we can `await` the completion of a request in an `async` functions!
 
 ```js
 (async () => {
