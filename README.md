@@ -1,4 +1,4 @@
-# ES7+ Bitcoin Price Tracker
+# Redux Bitcoin Price Tracker
 
 <a href="https://david-dm.org/nathanhleung/redux-bitcoin-price">![deps](https://david-dm.org/nathanhleung/redux-bitcoin-price/status.svg)</a>
 <a href="https://david-dm.org/nathanhleung/redux-bitcoin-price?type=dev">![devDeps](https://david-dm.org/nathanhleung/redux-bitcoin-price/dev-status.svg)</a>
