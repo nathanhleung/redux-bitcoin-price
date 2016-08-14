@@ -23,7 +23,7 @@ Bitcoin price tracker built with [React](https://facebook.github.io/react/), [Re
 
 ## Why fetch() and async/await?
 
-`fetch` returns a promise, so we can `await` the completion of a request in an `async` functions!
+`fetch` returns a promise, so we can `await` the completion of a request in an `async` function!
 
 ```js
 (async () => {
