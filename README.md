@@ -21,7 +21,7 @@ Bitcoin price tracker built with [React](https://facebook.github.io/react/), [Re
 - [PostCSS](http://postcss.org/) with [Autoprefixer](https://github.com/postcss/autoprefixer) and [PreCSS](https://jonathantneal.github.io/precss/)
 - [Webpack](https://webpack.github.io/) for module bundling
 
-## Why Fetch and async/await?
+## Why fetch() and async/await?
 
 `fetch` returns a promise, so we can `await` the completion of a request in an `async` functions!
 
