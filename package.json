@@ -1,7 +1,7 @@
 {
-  "name": "bitcoin-price-es7",
+  "name": "redux-bitcoin-price",
   "version": "1.0.0",
-  "description": "todo: you should really `git clone` this and edit locally. it's better.",
+  "description": "Bitcoin price tracker built with React, Redux, and Webpack, inspired by Preev.",
   "main": "index.js",
   "scripts": {
     "webpack": "webpack --progress --colors",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nathanhleung/bitcoin-price-es7.git"
+    "url": "git+https://github.com/nathanhleung/redux-bitcoin-price.git"
   },
   "author": "nathanhleung",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nathanhleung/bitcoin-price-es7/issues"
+    "url": "https://github.com/nathanhleung/redux-bitcoin-price/issues"
   },
-  "homepage": "https://github.com/nathanhleung/bitcoin-price-es7#readme",
+  "homepage": "https://github.com/nathanhleung/redux-bitcoin-price#readme",
   "dependencies": {
     "autoprefixer": "^6.4.0",
     "babel-core": "^6.13.2",
