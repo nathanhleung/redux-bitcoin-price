@@ -6,7 +6,7 @@
   "scripts": {
     "webpack": "webpack --progress --colors",
     "webpack:w": "webpack --progress --colors --watch",
-    "test": "mocha --compilers js:babel-register --recursive",
+    "test": "mocha --compilers js:babel-register \"src/**/*.test.js\"",
     "test:w": "npm run test -- --watch"
   },
   "repository": {
@@ -36,6 +36,7 @@
     "jade": "^1.11.0",
     "jade-loader": "^0.8.0",
     "moment": "^2.14.1",
+    "nock": "^8.0.0",
     "normalize.css": "^4.2.0",
     "postcss-loader": "^0.9.1",
     "precss": "^1.4.0",
