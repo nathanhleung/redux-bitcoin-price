@@ -1,7 +1,9 @@
 # Redux Bitcoin Price Tracker
 
-<a href="https://david-dm.org/nathanhleung/redux-bitcoin-price">![deps](https://david-dm.org/nathanhleung/redux-bitcoin-price/status.svg)</a>
-<a href="https://david-dm.org/nathanhleung/redux-bitcoin-price?type=dev">![devDeps](https://david-dm.org/nathanhleung/redux-bitcoin-price/dev-status.svg)</a>
+[![Build Status](https://travis-ci.org/nathanhleung/redux-bitcoin-price.svg)](https://travis-ci.org/nathanhleung/redux-bitcoin-price)
+[![Deps Status](https://david-dm.org/nathanhleung/redux-bitcoin-price/status.svg)](https://david-dm.org/nathanhleung/redux-bitcoin-price)
+[![DevDeps Status](https://david-dm.org/nathanhleung/redux-bitcoin-price/dev-status.svg)](https://david-dm.org/nathanhleung/redux-bitcoin-price?type=dev)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/485784da88ca42bb88c23aec632a030d)](https://www.codacy.com/app/18nleung/redux-bitcoin-price?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=nathanhleung/redux-bitcoin-price&amp;utm_campaign=Badge_Grade)
 
 Bitcoin price tracker built with [React](https://facebook.github.io/react/), [Redux](http://redux.js.org/), and [Webpack](https://webpack.github.io/), inspired by [Preev](http://preev.com/). Uses [Redux Thunk](https://github.com/gaearon/redux-thunk), [ES7 async/await](https://ponyfoo.com/articles/understanding-javascript-async-await), and [fetch](https://github.com/github/fetch) to get exchange data, then calculates a weighted average and updates once every 10 seconds (updates the title tag too!).
 
