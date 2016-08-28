@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import Helmet from 'react-helmet';
 import moment from 'moment';
 import { getData } from '../actions/data';
+import { getForexData } from '../actions/forexData';
 import { GDAX, BITSTAMP, KRAKEN } from '../constants/ExchangeNames';
 import Form from '../components/Form';
 import Footer from '../components/Footer';
@@ -15,6 +16,9 @@ class App extends Component {
       dispatch(getData(BITSTAMP));
       dispatch(getData(KRAKEN));
     }
+    // Forex data is only updated once/day, so
+    // we don't need to keep polling
+    dispatch(getForexData());
     tick();
     this.interval = setInterval(tick, 10000);
   }
@@ -34,7 +38,8 @@ class App extends Component {
             {'Index price is derived from a weighted average of bitcoin '}
             {'prices at 3 major exchanges'}
           </p>
-          <Form data={this.props.data} />
+          { /* perhaps these props should be passed in a container */ }
+          <Form data={this.props.data} forexData={this.props.forexData} />
           <p className={styles.textCenter}>
             {'Updates every 10 seconds, last updated '}
             {moment(this.props.lastUpdated).format('HH:mm:ss')}

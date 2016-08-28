@@ -44,6 +44,8 @@ Bitcoin price tracker built with [React](https://facebook.github.io/react/), [Re
 - Making the text flash on updates would be nice
 - Add stocks and other things to exchange! (AAPL etc)
 - Use redux-actions `handleAction` in reducers
+- Use `redux-form` for form handling
+- Consolidate action files (getting data and form actions could be two categories)
 - Add an eslint config and more tests
 - Wrap switch statements in blocks and make sure they break or return
 - Better code coverage (write tests/cover fetch() fail)

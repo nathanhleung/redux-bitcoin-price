@@ -3,5 +3,8 @@
 }
 
 .select {
+  display: inline-block;
+  height: 0;
+  width: 10rem;
   font-size: 1.5rem;
 }

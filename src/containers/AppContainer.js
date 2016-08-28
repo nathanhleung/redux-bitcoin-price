@@ -27,7 +27,9 @@ const mapStateToProps = (state) => {
     }
     return prev;
   }, 0);
+  const forexData = state.forexData.get('rates').toObject();
   return {
+    forexData,
     data,
     title, // set page title here
     lastUpdated,

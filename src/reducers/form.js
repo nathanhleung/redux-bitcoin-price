@@ -2,6 +2,7 @@ import { Map } from 'immutable';
 import {
   CHANGE_VALUE,
   SET_ACTIVE,
+  CHANGE_FIAT,
 } from '../constants/ActionTypes';
 import { BTC, USD } from '../constants/CurrencyCodes';
 
@@ -11,6 +12,7 @@ function form(state = Map({
   [USD]: '1',
   active: BTC,
   base: BTC,
+  fiat: USD, // default base is USD
 }), action) {
   switch (action.type) {
     case CHANGE_VALUE:
@@ -20,6 +22,10 @@ function form(state = Map({
     case SET_ACTIVE:
       return state.merge({
         active: action.payload,
+      });
+    case CHANGE_FIAT:
+      return state.merge({
+        fiat: action.payload,
       });
     default:
       return state;
