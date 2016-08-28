@@ -397,12 +397,15 @@ textarea {
 }
 
 ._3ugmCtDde7izlg9trIwWJ1 {
+  display: inline-block;
+  height: 0;
+  width: 10rem;
   font-size: 1.5rem;
 }._2yjHqn79WTO6Wnq4CtGE_f {
   position: absolute;
   bottom: 0;
   width: 100vw;
-  padding: 15px 0px;
+  padding: 15px 0;
   text-align: center;
   font-size: 1.5rem;
 }
