@@ -1,0 +1,20 @@
+.container {
+  display: inline-block;
+  position: relative;
+  top: 0.5rem;
+}
+
+.select {
+  text-align: left;
+  font-size: 1.5rem;
+  width: 9rem;
+}
+
+// Edit react-select CSS
+:global(.Select-control) {
+  padding: 10px;
+}
+
+:global(.Select-value) {
+  color: #111;
+}

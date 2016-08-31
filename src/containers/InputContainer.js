@@ -20,7 +20,13 @@ const mapStateToProps = (state, ownProps) => {
       value,
     };
   } else {
+    // get BTC/USD rate
     let rate = average(ownProps.data);
+    if (state.form.get('fiat') !== 'USD') {
+      const fiat = state.form.get('fiat');
+      // convert USD to current selected fiat currency
+      rate *= state.forexData.get('rates').get(fiat);
+    }
     // Only triggers if this is the inactive currency
     // If BTC is inactive, and BTC is the base (default),
     // we need to invert the rate before multiplying

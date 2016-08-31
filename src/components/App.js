@@ -39,7 +39,7 @@ class App extends Component {
             {'prices at 3 major exchanges'}
           </p>
           { /* perhaps these props should be passed in a container */ }
-          <Form data={this.props.data} forexData={this.props.forexData} />
+          <Form data={this.props.data} />
           <p className={styles.textCenter}>
             {'Updates every 10 seconds, last updated '}
             {moment(this.props.lastUpdated).format('HH:mm:ss')}

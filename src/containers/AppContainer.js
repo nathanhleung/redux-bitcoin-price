@@ -10,13 +10,27 @@ const mapStateToProps = (state) => {
   // convert to array so it can be processed by ../util/average.js
   // convert to objects for easier handling (dot property access, for one)
   const data = state.data.toArray().map(item => item.toObject());
+  // @todo make a helper function to calculate BTC/FIAT rate
   let rate = average(data);
-  if (active === USD) {
+  if (state.form.get('fiat') !== 'USD') {
+    const fiat = state.form.get('fiat');
+    // convert USD to current selected fiat currency
+    rate *= state.forexData.get('rates').get(fiat);
+  }
+  // don't hardcode this
+  if (active !== BTC) {
     // invert rate
     rate **= -1;
   }
   const value = state.form.get(active) * rate;
-  let title = `${prettyNum(value)} ${inactive}`;
+  // @todo maybe fix bc theres more currencies
+  // instead of BTC and USD being active and inactive
+  // we need actually  currency names
+  let inactiveCurrCode = inactive;
+  if (state.form.get('fiat') !== USD && inactive === USD) {
+    inactiveCurrCode = state.form.get('fiat');
+  }
+  let title = `${prettyNum(value)} ${inactiveCurrCode}`;
   // edge case on page load when it's NaN
   if (isNaN(value)) {
     title = 'React Bitcoin Price Ticker';
@@ -27,9 +41,7 @@ const mapStateToProps = (state) => {
     }
     return prev;
   }, 0);
-  const forexData = state.forexData.get('rates').toObject();
   return {
-    forexData,
     data,
     title, // set page title here
     lastUpdated,
