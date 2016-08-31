@@ -392,15 +392,27 @@ textarea {
 
 .Zi4_m0c4OMQQMLt7nNn1l {
   font-weight: bold;
-}._1_4XVRcSzRlK77ZE2vJXeq {
-  text-align: center;
+}._3aOgSsm4hngfVKYfCvEKd_ {
+  display: inline-block;
+  position: relative;
+  top: 0.5rem;
 }
 
-._3ugmCtDde7izlg9trIwWJ1 {
-  display: inline-block;
-  height: 0;
-  width: 10rem;
+._2-K-Fa-T7BE5yyXveRDuJk {
+  text-align: left;
   font-size: 1.5rem;
+  width: 9rem;
+}
+
+// Edit react-select CSS
+.Select-control {
+  padding: 10px;
+}
+
+.Select-value {
+  color: #111;
+}._1_4XVRcSzRlK77ZE2vJXeq {
+  text-align: center;
 }._2yjHqn79WTO6Wnq4CtGE_f {
   position: absolute;
   bottom: 0;
